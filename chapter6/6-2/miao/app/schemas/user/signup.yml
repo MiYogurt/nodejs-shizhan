@@ -1,0 +1,37 @@
+username:
+  required: true
+  message: '请填写用户名'
+password:
+  - min: 6
+    message: '密码长度不能小于 6 位'
+  - required: true
+    message: '请填写密码'
+confirm_password:
+  - required: true 
+    message: '请填写确认密码'
+  - validator: !!js/function >
+      function validator(ctx) {
+        return async function (rule, value, callback, source, options) {
+          if(ctx.request.body.password === value){
+            return callback();
+          }
+          callback([{ message:'密码与确认密码不匹配', field:'comfirm_password'} ])
+        }
+      }
+email:
+  type: 'email'
+  required: true
+  message: '用户邮箱有误'
+code:
+  - required: true
+    message: '必须填写邀请码'
+  # - validator: !!js/function > 
+  #     function validator(ctx) {
+  #       return async function (_, value, cb) {
+  #         const invitation = await ctx.app.model.Invitation.find({where:{code:value}})
+  #         if (!invitation) {
+  #           return cb([{ message:'没有找到该邀请码', field:'code'}])
+  #         }
+  #         return cb()
+  #       }
+  #     }

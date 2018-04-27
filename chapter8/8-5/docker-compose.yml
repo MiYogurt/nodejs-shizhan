@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    image: yugo/py
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "9000:80"
+    networks:
+      - webnet
+networks:
+  webnet:

@@ -1,0 +1,4 @@
+✔ 完善评论组件 @done(18-04-10 11:02)
+✘ 设计评论组件与后端 API 接口 @started(18-04-10 11:03) @cancelled(18-04-10 11:03) @wasted(51 seconds)
+✔ 集成评论组件到 ImageDetail 里面去 @done(18-04-10 11:02)
+✔ 编写文章教程 @started(18-04-10 11:03) @done(18-04-10 11:03) @lasted(39 seconds)

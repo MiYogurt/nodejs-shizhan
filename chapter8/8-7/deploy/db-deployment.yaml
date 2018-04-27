@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.12.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: db
+  name: db
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: db
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_DATABASE
+          value: miao
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+        image: mysql:5.6
+        name: db
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: egg-mysql
+      restartPolicy: Always
+      volumes:
+      - name: egg-mysql
+        persistentVolumeClaim:
+          claimName: egg-mysql
+status: {}

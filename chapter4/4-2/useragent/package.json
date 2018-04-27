@@ -1,0 +1,16 @@
+{
+  "name": "4-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "middleware.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-useragent": "^1.0.0"
+  }
+}

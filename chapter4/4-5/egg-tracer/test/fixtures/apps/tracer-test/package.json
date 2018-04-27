@@ -1,0 +1,12 @@
+{
+    "name": "tracer-test",
+    "version": "0.0.1",
+    "dependencies": {
+        "egg": "^2.3.0",
+        "egg-bin": "^4.3.7",
+        "egg-tracer": "file:../../../.."
+    },
+    "scripts": {
+        "start": "egg-bin dev"
+    }
+}

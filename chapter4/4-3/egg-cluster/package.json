@@ -1,0 +1,19 @@
+{
+  "name": "egg-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cfork": "^1.7.1",
+    "chokidar": "^2.0.0",
+    "cluster-reload": "^1.0.2",
+    "globby": "^7.1.1",
+    "koa": "^2.4.1"
+  }
+}

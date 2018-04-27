@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- <link rel="apple-touch-icon" sizes="120x120" href="/public/logo-120.png"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <!-- <link rel="shortcut icon" sizes="48x48" href="/public/logo-48.png"> -->
+    <meta name="theme-color" content="#f60">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
+        crossorigin="anonymous">
+    <link rel="preload" href="/dist/libs.js" as="script">
+    <script src="/dist/libs.js"></script>
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <style>
+        #skip a {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        #skip a:focus {
+            position: static;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <!-- <link rel="preload" href="/dist/libs.js" as="script"> -->
+    <link rel="preload" href="//cdn.bootcss.com/ramda/0.25.0/ramda.min.js" as="script">
+    <link rel="preload" href="//cdn.bootcss.com/rxjs/5.5.7/Rx.min.js" as="script">
+
+</head>
+
+<body>
+    <div id="skip">
+        <a href="#app">skip to content</a>
+    </div>
+    <!-- <script src="/dist/libs.js" defer></script> -->
+    <script src="//cdn.bootcss.com/ramda/0.25.0/ramda.min.js" defer></script>
+    <script src="//cdn.bootcss.com/rxjs/5.5.7/Rx.min.js" defer></script>
+    <!--vue-ssr-outlet-->
+</body>
+
+</html>

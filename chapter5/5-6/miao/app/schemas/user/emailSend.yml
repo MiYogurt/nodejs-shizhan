@@ -1,0 +1,13 @@
+# 发送验证邮件
+email:
+  - type: 'email'
+  - required: true
+    message: '请提供用户邮箱'
+  # - validator: !!js/function >
+  #     function validator(ctx) {
+  #       return async function (rule, value, callback, source, options) {
+  #         const user = await ctx.model.User.findOne({where:{email:value}})
+  #         if(!user) callback([{"field":"email","message":"没有该邮箱"}])
+  #         return callback()
+  #       }
+  #     }

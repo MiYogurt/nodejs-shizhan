@@ -1,0 +1,7 @@
+# 验证邮件
+user_id:
+  required: true
+  message: '请提供用户ID'
+t:
+  required: true
+  message: '请提供令牌'

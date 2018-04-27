@@ -1,0 +1,45 @@
+version: '3.1'
+services: 
+  web:
+    image: ccr.ccs.tencentyun.com/yugo/imgs
+    restart: always
+    depends_on:
+      - cache
+      - db
+    networks:
+      - docker_miao
+    ports:
+      - 7001:7001
+
+  cache:
+    image: redis:3.2-alpine
+    command: redis-server --appendonly yes --requirepass password
+    volumes:
+      - egg-redis:/data
+    networks:
+      - docker_miao
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:     
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=miao
+    volumes:
+      - egg-mysql:/var/lib/mysql
+    networks:
+      - docker_miao
+
+  adminer:
+    image: adminer
+    restart: always
+    networks:
+      - docker_miao
+    ports:
+      - 8080:8080
+volumes:
+  egg-mysql:
+  egg-redis:
+
+networks:
+  docker_miao:

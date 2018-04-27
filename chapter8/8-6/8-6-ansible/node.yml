@@ -1,0 +1,7 @@
+---
+
+- name: deploy my node application
+  hosts: server
+  remote_user: pi
+  roles:
+    - common

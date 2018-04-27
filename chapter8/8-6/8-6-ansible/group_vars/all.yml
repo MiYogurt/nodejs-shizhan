@@ -1,0 +1,4 @@
+---
+
+repo_url: /home/pi/node_project
+start_shell: 'npx pm2 delete all ; npx pm2 start index.js'

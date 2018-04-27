@@ -1,0 +1,29 @@
+version: '3.2'
+services:
+  web:
+    build: .
+    command: npm run start
+    restart: always
+    deploy:
+      replicas: 2
+    volumes:
+      - .:/myapp
+    ports:
+      - "7001:7001"
+  
+  db:
+    image: mysql:5.6
+    restart: always
+    volumes:
+      - "db-data:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: 888888
+      MYSQL_DATABASE: app
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9000:8080
+volumes:
+  db-data:

@@ -1,0 +1,23 @@
+---
+
+- name: remove prev version
+  # shell: 'rm -rf /home/pi/work3'
+  file: 
+    path: /home/pi/work3
+    state: absent
+
+- name: fetch git source code
+  git:
+    repo: "{{ repo_url }}"
+    dest: /home/pi/work3
+
+- name: install dependencies
+  npm:
+    executable: /usr/bin/npm
+    path: /home/pi/work3
+
+- name: run by pm2
+  shell: "{{ start_shell }}"
+  args:
+    executable: /bin/bash
+    chdir: /home/pi/work3

@@ -1,0 +1,13 @@
+# 用户登录
+email:
+  type: 'email'
+  required: true
+  message: '用户邮箱有误'
+password:
+  - min: 6
+    message: '密码长度不能小于 6 位'
+  - required: true
+    message: '请填写密码'
+remember_me:
+  type: boolean
+  message: '记住密码必须是一个布尔值'

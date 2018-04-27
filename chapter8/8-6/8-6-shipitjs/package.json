@@ -1,0 +1,26 @@
+{
+  "name": "8-6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 restart index.js"
+  },
+  "husky": {
+    "hooks": {
+      "post-receive": "echo Hello"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "husky": "^1.0.0-rc.2",
+    "pm2": "^2.10.2"
+  },
+  "devDependencies": {
+    "shipit-cli": "^4.0.2",
+    "shipit-deploy": "^4.0.2"
+  }
+}

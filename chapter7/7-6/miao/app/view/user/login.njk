@@ -1,0 +1,13 @@
+{% extends '../layout/app.njk' %}
+
+{% block content %}
+  <div class="container">
+    <h2>login</h2>
+
+    <form action="/authorize?{{query}}" method="post">
+      <input type="text" name="username" value="xxx@qq.com">
+      <input type="password" name="password" value="888888">
+      <button type="submit">login</button>
+    </form>
+  </div>
+{% endblock %}

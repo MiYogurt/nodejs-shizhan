@@ -1,0 +1,49 @@
+import * as webpack from 'webpack'
+import * as merge from 'webpack-merge'
+import * as nodeExternals from 'webpack-node-externals'
+import * as VueSSRServerPlugin from 'vue-server-renderer/server-plugin'
+import BaseConfiguration from './base'
+import { getPath } from './utils'
+
+export default merge(BaseConfiguration, {
+  target: 'node',
+  devtool: 'source-map',
+  entry: getPath('src/entry-server.ts'),
+  output: {
+    filename: 'server-bundle.js',
+    libraryTarget: 'commonjs2'
+  },
+  resolve: {
+    alias: {
+      api: getPath('src/api/v1/server/index.ts')
+    },
+    extensions: [
+      '.ts',
+      '.tsx',
+      '.js',
+      '.vue',
+      '.json',
+      '.styl',
+      '.css',
+      '.sass',
+      '.scss'
+    ]
+  },
+  externals: [
+    nodeExternals({
+      whitelist: [/\.css$/, /\.styl$/, /\.vue$/, /vue-quill-editor/]
+    }),
+    'quill'
+  ],
+  plugins: [
+    new webpack.DefinePlugin({
+      isServer: true,
+      isClient: false
+    }),
+    new webpack.ProvidePlugin({
+      R: ['ramda/dist/ramda.js'],
+      Rx: ['rxjs']
+    }),
+    new VueSSRServerPlugin()
+  ]
+})

@@ -1,0 +1,10 @@
+{
+  "extends": "eslint-config-egg",
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "space-before-function-paren": "off",
+    "no-unused-vars": "off"
+  }
+}

@@ -1,0 +1,23 @@
+<template>
+  <div>
+  </div>
+</template>
+
+<script lang="ts">
+  import { Vue, Component, Prop } from 'vue-property-decorator'
+  import { ComponentOptions } from 'vue'
+  import { State, Getter, Action, Mutation, namespace } from 'vuex-class'
+
+  const {{ sentenceCase name }}State = namespace('{{ name }}', State)
+  const {{ sentenceCase name }}Mutation = namespace('{{ name }}', Mutation)
+
+  @Component({
+    name: '{{sentenceCase name}}Page'
+  })
+  export default class {{ sentenceCase name }}Page extends Vue {
+
+  }
+</script>
+
+<style lang="sass" scoped>
+</style>

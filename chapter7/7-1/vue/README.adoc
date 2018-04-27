@@ -1,0 +1,31 @@
+= TypeScript Vue SSR Starter
+:toc:
+
+[TIP] 
+对于 property-decorator 插件，写到`` @compoents({}) ``里面的配置项，通常能让你预期的工作，而写到类里面需要做一些兼容。
+
+== 配置
+
+配置 VSCode，让 VSCode 帮你格式化，记得装上 prettier 插件。
+
+[source,json]
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "tslint.autoFixOnSave": true
+}
+
+== 运行
+
+[source,bash]
+npm install
+ts-node server.ts
+
+== 已知问题
+
+[WARNING]
+某些定义文件有问题，但不影响使用
+
+[WARNING]
+``"esModuleInterop": true `` 可以帮助你把 `` export = xxx `` 也可以通过 `` import xxx from 'xxx' `` 导入。
